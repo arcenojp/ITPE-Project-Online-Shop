@@ -7,9 +7,10 @@
     --dark-color: #333;
     --danger-color: #e74c3c;
     --success-color: #2ecc71;
-    --white: #fff;
+    --white: #fcffe9;
     --gray: #95a5a6;
     --light-gray: #f5f5f5;
+    --softskyblue:#c1f1ff;
 }
 
 * {
@@ -95,7 +96,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--white);
+    background: var(--softskyblue);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -112,6 +113,9 @@ body {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--secondary-color);
+}
+.logo img {
+    margin-right: 15px;
 }
 
 .logo span {
@@ -155,7 +159,7 @@ body {
 
 /* Hero Section */
 #home {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(Background-restaurant.jpg) no-repeat center center/cover;
     color: var(--white);
     display: flex;
     align-items: center;
@@ -187,12 +191,13 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    gap: 10px;
 }
 
 .filter-btn {
-    background: var(--light-gray);
-    color: var(--dark-color);
-    border: none;
+    background: transparent;
+    color: var(--primary-color);
+    border:2px solid var(--primary-color);
     padding: 8px 20px;
     margin: 5px;
     border-radius: 30px;
@@ -203,13 +208,14 @@ body {
 .filter-btn.active,
 .filter-btn:hover {
     background: var(--primary-color);
-    color: var(--white);
+    color: white;
 }
 
 .menu-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+    
 }
 
 .menu-item {
@@ -218,6 +224,7 @@ body {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    opacity: 1;
 }
 
 .menu-item:hover {
@@ -407,10 +414,18 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
     transition: all 0.3s ease;
+    
 }
 
 .testimonial:hover {
     transform: translateY(-10px);
+}
+.testimonial .customer img {
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(61, 60, 60);
 }
 
 .rating {
@@ -955,6 +970,13 @@ footer {
 
 .footer-links a:hover {
     color: var(--primary-color);
+}
+.logo-footer img{
+    margin-right: 15px;
+}
+.logo-footer span{
+    color: var(--primary-color);
+
 }
 
 /* Responsive Styles */

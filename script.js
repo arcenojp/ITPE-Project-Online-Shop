@@ -1,8 +1,11 @@
+const cart = [];
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation
+    
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links li a');
+    
 
     hamburger.addEventListener('click', function() {
         this.classList.toggle('active');
@@ -68,13 +71,20 @@ document.addEventListener('DOMContentLoaded', function() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
-            const filterValue = this.getAttribute('data-filter');
+            const filterValue = this.dataset.filter;
+            const menuItems = document.querySelectorAll('.menu-item');
             
             menuItems.forEach(item => {
                 if (filterValue === 'all' || item.classList.contains(filterValue)) {
                     item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                    }, 50);
                 } else {
-                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
                 }
             });
         });
@@ -98,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Cart Functionality
-    const cart = [];
     const cartModal = document.getElementById('cart-modal');
     const cartButton = document.querySelector('a[href="#cart"]');
     const closeModal = document.querySelector('.close-modal');
@@ -111,20 +120,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Sample menu data
     const menuData = [
-        { id: 1, name: 'Bruschetta', description: 'Toasted bread topped with tomatoes, garlic, and fresh basil', price: 8.99, category: 'starters', image: 'https://images.unsplash.com/photo-1572695157366-5e585ab2b69f' },
-        { id: 2, name: 'Calamari', description: 'Crispy fried squid served with lemon aioli', price: 12.99, category: 'starters', image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b' },
-        { id: 3, name: 'Caprese Salad', description: 'Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze', price: 10.99, category: 'starters', image: 'https://images.unsplash.com/photo-1559847844-5315695dadae' },
-        { id: 4, name: 'Filet Mignon', description: '8oz grass-fed beef with roasted vegetables and mashed potatoes', price: 32.99, category: 'mains', image: 'https://images.unsplash.com/photo-1544025162-d76694265947' },
-        { id: 5, name: 'Grilled Salmon', description: 'Wild-caught salmon with lemon butter sauce and asparagus', price: 26.99, category: 'mains', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a8b9903' },
-        { id: 6, name: 'Mushroom Risotto', description: 'Creamy arborio rice with wild mushrooms and parmesan', price: 18.99, category: 'mains', image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3' },
-        { id: 7, name: 'Margherita Pizza', description: 'Classic pizza with tomato sauce, mozzarella, and basil', price: 16.99, category: 'mains', image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38' },
-        { id: 8, name: 'Tiramisu', description: 'Classic Italian dessert with coffee-soaked ladyfingers', price: 9.99, category: 'desserts', image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb' },
-        { id: 9, name: 'Chocolate Lava Cake', description: 'Warm chocolate cake with a molten center and vanilla ice cream', price: 10.99, category: 'desserts', image: 'https://images.unsplash.com/photo-1495147466023-ac5c588e2e94' },
-        { id: 10, name: 'Crème Brûlée', description: 'Classic vanilla custard with caramelized sugar topping', price: 8.99, category: 'desserts', image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2' },
-        { id: 11, name: 'House Red Wine', description: 'Glass of our signature Cabernet Sauvignon', price: 9.99, category: 'drinks', image: 'https://images.unsplash.com/photo-1551218372-f9e86a1a7e7a' },
-        { id: 12, name: 'Craft Beer', description: 'Local IPA from our microbrewery partner', price: 7.99, category: 'drinks', image: 'https://images.unsplash.com/photo-1572913017566-3679f27cbac2' },
-        { id: 13, name: 'Sparkling Water', description: 'Premium mineral water with natural carbonation', price: 3.99, category: 'drinks', image: 'https://images.unsplash.com/photo-1560512823-829485b8bf24' }
+        { id: 1, name: 'Bruschetta', description: 'Toasted bread topped with tomatoes, garlic, and fresh basil', price: 249.99, category: 'starters', image: 'bruschetta.jpg' },
+        { id: 2, name: 'Calamari', description: 'Crispy fried squid served with lemon aioli', price: 380.00, category: 'starters', image: 'Calamari.png' },
+        { id: 3, name: 'Caprese Salad', description: 'Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze', price: 425.99, category: 'starters', image: 'Caprese-salad.jpg' },
+        { id: 4, name: 'Filet Mignon', description: '8oz grass-fed beef with roasted vegetables and mashed potatoes', price: 899.99, category: 'mains', image: 'filet-mignon.png' },
+        { id: 5, name: 'Grilled Salmon', description: 'Wild-caught salmon with lemon butter sauce and asparagus', price: 550.00, category: 'mains', image: 'Grilled salmon.jpg' },
+        { id: 6, name: 'Mushroom Risotto', description: 'Creamy arborio rice with wild mushrooms and parmesan', price: 600.00, category: 'mains', image: 'mushroom risotto.jpg' },
+        { id: 7, name: 'Margherita Pizza', description: 'Classic pizza with tomato sauce, mozzarella, and basil', price: 450.00, category: 'mains', image: 'pizza margherita.jpg' },
+        { id: 8, name: 'Tiramisu', description: 'Classic Italian dessert with coffee-soaked ladyfingers', price: 349.99, category: 'desserts', image: 'tiramisu.jpg' },
+        { id: 9, name: 'Chocolate Lava Cake', description: 'Warm chocolate cake with a molten center and vanilla ice cream', price: 265.00, category: 'desserts', image: 'chocolate lava cake.jpg' },
+        { id: 10, name: 'Crème Brûlée', description: 'Classic vanilla custard with caramelized sugar topping', price: 340.00, category: 'desserts', image: 'creme.jpg' },
+        { id: 11, name: 'House Red Wine', description: 'Glass of our signature Cabernet Sauvignon', price: 500.00, category: 'drinks', image: 'red-wine.jpg' },
+        { id: 12, name: 'Craft Beer', description: 'Local IPA from our microbrewery partner', price: 250.00, category: 'drinks', image: 'craft-beer.jpg' },
+        { id: 13, name: 'Sparkling Water', description: 'Premium mineral water with natural carbonation', price: 125.00, category: 'drinks', image: 'Sparkling water.jpg' }
     ];
+    
 
     // Populate menu items
     const menuContainer = document.getElementById('menu-container');
@@ -140,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="menu-item-category">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
                 <div class="menu-item-title">
                     <h3>${item.name}</h3>
-                    <span class="price">$${item.price.toFixed(2)}</span>
+                    <span class="price">₱${item.price.toFixed(2)}</span>
                 </div>
                 <p>${item.description}</p>
                 <button class="btn add-to-cart" data-id="${item.id}">Add to Cart</button>
@@ -152,19 +162,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners to all add-to-cart buttons (including dynamically created ones)
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add-to-cart')) {
-            const itemId = parseInt(e.target.getAttribute('data-id'));
+            const itemId = e.target.getAttribute('data-id');
             addToCart(itemId);
         }
     });
 
     // Cart functions
     function addToCart(itemId) {
-        const item = menuData.find(i => i.id === itemId) || 
-                    { id: 101, name: 'Truffle Pasta', description: 'Handmade pasta with black truffle and parmesan', price: 24.99 } ||
-                    { id: 102, name: 'Organic Salad Bowl', description: 'Fresh organic vegetables with house dressing', price: 18.99 } ||
-                    { id: 103, name: 'Chocolate Soufflé', description: 'Warm chocolate soufflé with vanilla ice cream', price: 14.99 };
+        const specialDishes = [
+            { id: 101, name: 'Adobo Short Ribs', description: 'Braised beef short ribs in adobo reduction', price: 550.00, image: 'filipino adobo-short-ribs.jpg' },
+            { id: 102, name: 'Organic Salad Bowl', description: 'Fresh organic vegetables', price: 200.00, image: 'organic salad bowl.jpg' },
+            { id: 103, name: 'Seafood Kinilaw', description: 'Fresh tuna, scallops, and oysters', price: 350.00, image: 'Seafood kinilaw.jpg' }
+        ];
+    
+        itemId = parseInt(itemId);
         
-        const existingItem = cart.find(i => i.id === item.id);
+        // Find item in either regular menu or special dishes
+        let item = menuData.find(item => item.id === itemId);
+        if (!item) {
+            item = specialDishes.find(item => item.id === itemId);
+        }
+        
+        if (!item) {
+            console.error('Item not found:', itemId);
+            return;
+        }
+    
+        // Check if item already in cart
+        const existingItem = cart.find(cartItem => cartItem.id === item.id);
         
         if (existingItem) {
             existingItem.quantity += 1;
@@ -174,7 +199,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 quantity: 1
             });
         }
-        
+        console.log('Adding to cart:', item); 
+    updateCart();
         updateCart();
         showCartNotification(item.name);
     }
@@ -198,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
-            cartTotal.textContent = '$0.00';
+            cartTotal.textContent = '₱0.00';
             return;
         }
         
@@ -220,8 +246,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="cart-item-remove" data-id="${item.id}">Remove</span>
                 </div>
                 <div class="cart-item-price">
-                    $${item.price.toFixed(2)} x ${item.quantity}<br>
-                    <strong>$${itemTotal.toFixed(2)}</strong>
+                    ₱${item.price.toFixed(2)} x ${item.quantity}<br>
+                    <strong>₱${itemTotal.toFixed(2)}</strong>
                 </div>
             `;
             cartItemsContainer.appendChild(cartItem);
@@ -236,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Update total
-        cartTotal.textContent = `$${total.toFixed(2)}`;
+        cartTotal.textContent = `₱${total.toFixed(2)}`;
     }
 
     function showCartNotification(itemName) {
