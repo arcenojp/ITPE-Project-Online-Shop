@@ -15,4 +15,4 @@ Forcado, Alea Ann M. -- Content & UI Designer
 
 Asis, TJ Anthony D. -- Backend Developer
 
-Lorjhon, capangpangan p. -- Backed Developer 
+Lorjhon, capangpangan p. -- Backend Developer 
