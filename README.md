@@ -4,3 +4,4 @@ ITPE Project : Online Shop – A basic e-commerce platform where users can brows
 Group Members: 
 
 Arceño, Jan Perry H. -- Github and Deployment Manager
+Niño, Chris Masaru S. -- Github and Project Manager
