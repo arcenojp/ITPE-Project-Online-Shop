@@ -10,3 +10,5 @@ Niño, Chris Masaru S. -- Github and Project Manager
 Pentoque,Maeden J. -- Github and Project Manager
 
 Forcado, Alea Ann M. -- Content & UI Designer
+
+Asis, TJ Anthony D. -- Backend Developer
