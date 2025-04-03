@@ -7,4 +7,4 @@ Arceño, Jan Perry H. -- Github and Deployment Manager
 
 Niño, Chris Masaru S. -- Github and Project Manager
 
-Pentoque,Maeden J. -- Github and Project Managera
+Pentoque,Maeden J. -- Github and Project Manager
