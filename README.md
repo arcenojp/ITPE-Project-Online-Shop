@@ -5,6 +5,8 @@ Group Members:
 
 Arceño, Jan Perry H. -- Github and Deployment Manager
 
+Apines, Aimee Clarisse M. -- Github and Project Manager
+
 Niño, Chris Masaru S. -- Github and Project Manager
 
 Pentoque,Maeden J. -- Github and Project Manager
