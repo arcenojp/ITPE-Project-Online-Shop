@@ -3,6 +3,7 @@ ITPE Project : Online Shop – A basic e-commerce platform where users can brows
 
 Featuring our Shop Urban Tastebuds an Online Shop themed in restaurant style
 
+![Screenshot 2025-04-05 034553](https://github.com/user-attachments/assets/bfe776fc-da18-418e-b3ff-f7a9f845892e)
 
 Group Members: 
 
