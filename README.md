@@ -16,3 +16,10 @@ Forcado, Alea Ann M. -- Content & UI Designer
 Asis, TJ Anthony D. -- Backend Developer
 
 Lorjhon, capangpangan p. -- Backend Developer 
+
+
+
+
+
+
+![about Background](https://github.com/user-attachments/assets/6735f51b-53dd-45a2-a4d6-2a23a7d2a70b)
