@@ -20,6 +20,8 @@ Asis, TJ Anthony D. -- Backend Developer
 
 Lorjhon, capangpangan p. -- Backend Developer 
 
+Ya-un, Mary Rose E. -- Frontend Developer
+
 
 
 
