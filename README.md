@@ -22,9 +22,6 @@ Lorjhon, capangpangan p. -- Backend Developer
 
 Ya-un, Mary Rose E. -- Frontend Developer
 
-
-
-
-
+Galindo, Clint Josh -- Frontend Developer
 
 ![about Background](https://github.com/user-attachments/assets/6735f51b-53dd-45a2-a4d6-2a23a7d2a70b)
