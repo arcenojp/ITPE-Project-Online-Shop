@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav id="main-nav">
         <div class="container">
             <h1 class="logo"><img src="logo.png"heigth="60"width="60">Urban <span>Tastebuds</span></h1>
@@ -20,6 +19,18 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#cart"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                <li id="auth-links">
+                    <a href="#" id="login-link">Login</a>
+                    <a href="#" id="register-link">Register</a>
+                </li>
+                <li id="user-profile" style="display: none;">
+                    <a href="#" id="user-greeting"></a>
+                    <div class="user-dropdown">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-history"></i> Orders</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
             </ul>
             <div class="hamburger">
                 <div class="line"></div>
@@ -40,8 +51,13 @@
 
     <!-- Menu Section -->
     <section id="menu" class="page">
+        
         <div class="container">
             <h2 class="section-title">Our Menu</h2>
+            <div class="menu-search">
+                <input type="text" id="menu-search-input" placeholder="Search menu items...">
+                <button id="search-clear">✕</button>
+              </div>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="starters">Starters</button>
@@ -148,7 +164,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>"I order the sushi platter every Friday. Fresh, delicious, and beautifully presented."</p>
+                    <p>"I order the sushi platter every Friday. Fresh, delicious, and beautifully 
+                    <br>presented."</p>
                     <div class="customer">
                         <img src="default profile pic.png" alt="Michael T.">
                         <h4>Michael</h4>
@@ -162,7 +179,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Their desserts are to die for! The chocolate soufflé is my weekly treat."</p>
+                    <p>"Their desserts are to die for!<br> The chocolate soufflé<br> is my weekly treat."</p>
                     <div class="customer">
                         <img src="default profile pic.png" alt="Emily R.">
                         <h4>Emily</h4>
@@ -277,7 +294,7 @@
                         <p>Join us for an exclusive 5-course meal with wine pairings selected by our sommelier.</p>
                         <div class="event-meta">
                             <span><i class="fas fa-clock"></i> 7:00 PM</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Gourmet Haven</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Urban Tastebuds</span>
                         </div>
                         <button class="btn">Reserve Seat</button>
                     </div>
@@ -289,10 +306,10 @@
                     </div>
                     <div class="event-details">
                         <h3>Sushi Masterclass</h3>
-                        <p>Learn the art of sushi making from Chef Akira in this hands-on workshop.</p>
+                        <p>Learn the art of sushi making from our Chef in this hands-on workshop.</p>
                         <div class="event-meta">
                             <span><i class="fas fa-clock"></i> 5:00 PM</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Gourmet Haven</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Urban Tastebuds</span>
                         </div>
                         <button class="btn">Reserve Seat</button>
                     </div>
@@ -518,10 +535,11 @@
       </div>
       <div class="loyalty-join">
         <button class="btn">Join Now</button>
-        <p>Earn 1 point for every $1 spent</p>
+        <p>Earn 1 point for every ₱50 spent</p>
       </div>
     </div>
   </section>
+  
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -571,9 +589,53 @@
                 </div>
             </div>
         </div>
-    
     </footer>
+    <!-- Login Modal -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Login to Your Account</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <input type="email" id="login-email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="login-password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p class="form-footer">Don't have an account? <a href="#" id="show-register">Register here</a></p>
+        </form>
+    </div>
+</div>
 
+<!-- Register Modal -->
+<div id="register-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Create an Account</h2>
+        <form id="register-form">
+            <div class="form-group">
+                <input type="text" id="register-name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="register-email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="register-password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="register-confirm" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <p class="form-footer">Already have an account? <a href="#" id="show-login">Login here</a></p>
+        </form>
+    </div>
+</div>
+    <button id="back-to-top" title="Go to top">↑</button>
     <script src="script.js"></script>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+      </div>
+      
 </body>
 </html>
