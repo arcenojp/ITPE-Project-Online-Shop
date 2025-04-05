@@ -1,7 +1,5 @@
 # ITPE-Project-Online-Shop
-ITPE Project : Online Shop – A basic e-commerce platform where users can browse and purchase products.
-
-Featuring our Shop Urban Tastebuds an Online Shop themed in restaurant style
+ITPE Project : Featuring our Shop Urban Tastebuds our unique online store styled like a restaurant, where you can explore and order our signature dishes with just a few clicks! Experience the flavor of convenience as you browse our web application designed to bring your favorite meals right to your doorstep."
 
 ![Screenshot 2025-04-05 034553](https://github.com/user-attachments/assets/bfe776fc-da18-418e-b3ff-f7a9f845892e)
 
